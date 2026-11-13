@@ -16,13 +16,12 @@ public class Q5 {
 
         int x, y, b;
 
-        // 1. Input validation: ask for all three again until every one is valid
         while (true) {
             System.out.print("Enter width X: ");
             if (in.hasNextInt()) {
                 x = in.nextInt();
             } else {
-                in.next();                    // throw away a non-integer
+                in.next();                    
                 x = -1;
             }
             System.out.print("Enter height Y: ");
@@ -49,7 +48,6 @@ public class Q5 {
             System.out.println("Error: X and Y must be odd numbers between 7 and 29, and B must be between 1 and 3.");
         }
 
-        // 2. Positions (integer division, counting from 0)
         int centreRow = y / 2;
         int centreCol = x / 2;
 
@@ -62,7 +60,6 @@ public class Q5 {
                 boolean edgeCol = c == 0 || c == x - 1;
                 char ch;
 
-                // 3. Fill rules, checked in priority order: the first match wins
                 if (edgeRow && edgeCol) {
                     ch = '+';
                 } else if (edgeRow) {
